@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+
+<style>
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+.title
+{
+  font-size:30px; 
+  cursor:pointer;
+  font-family: Alike;
+}
+.navbar
+{
+  background-color: #f97220 ;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fa833a ;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.glyphicon
+{
+  top: 1px;
+  position: relative;
+  display: inline-block;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+  font-family: "Glyphicons Halflings";
+}
+ 
+/*.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+} 
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; 
+  display: table; 
+}
+
+.clearfix:after {
+  clear: both;
+}
+.noflick {
+  perspective: 1000;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}
+/
+* {
+  box-sizing: border-box;
+}
+html,
+button,
+input,
+select,
+textarea {
+  color: #000000;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1;
+  background-color: rgba(255,255,255,1);
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 47%, rgba(222,222,222,1) 100%);
+}
+
+::selection {
+  background: #B3D4FC;
+  text-shadow: none;
+}
+a:focus {
+  outline: none;
+}
+::-webkit-input-placeholder {
+  color: rgba(0,0,0,.7);
+}
+
+:placeholder {
+  
+  color: rgba(0,0,0,.7);
+}
+
+
+
+#board {
+  padding: 100px 30px 30px;
+  margin-top: 40px;
+  overflow-y: visible;
+  @extend .noflick;
+}
+.note {
+  float: left;
+  display: block;
+  position: relative;
+  padding: 1em;
+  width: 300px;
+  min-height: 300px;
+  margin: 0 30px 30px 0;
+  background: linear-gradient(top, rgba(0,0,0,.05), rgba(0,0,0,.25));
+  background-color: #FFFD75;
+  box-shadow: 5px 5px 10px -2px rgba(33,33,33,.3);
+  transform: rotate(2deg);
+  transform: skew(-1deg,1deg);
+  transition: transform .15s;
+  z-index: 1;
+  @extend .noflick;
+
+  &:hover {
+    cursor: move;
+  }
+  &.ui-draggable-dragging:nth-child(n) {
+    box-shadow: 5px 5px 15px 0 rgba(0,0,0,.3);
+    transform: scale(1.125) !important;
+    z-index: 100;
+    cursor: move;
+    transition: transform .150s;
+  }
+
+  textarea {
+    background-color: transparent;
+    border: none;
+    resize: vertical;
+    font-family: "Gloria Hallelujah", cursive;
+    width: 100%;
+    padding: 5px;
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: 0 0 5px 1px rgba(0,0,0,.2) inset;
+    }
+    &.title {
+      font-size: 24px;
+      line-height: 1.2;
+      color: #000000;
+      height: 64px;
+      margin-top: 20px;
+    }
+    &.cnt {
+      min-height: 200px;
+    }
+  }
+  &:nth-child(2n) {
+    background: #FAAACA;
+  }
+  &:nth-child(3n) {
+    background: #69F098;
+  }
+}
+
+
+.button {
+  font: bold 16px Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+  padding: 1em 2em;
+  background: linear-gradient(top, rgba(0,0,0,.15), rgba(0,0,0,.3));
+  background-color: #00CC00;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.3),inset 0 -1px 2px -1px rgba(0,0,0,.5), inset 0 1px 2px 1px rgba(255,255,255,.3);
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.3);
+  text-decoration: none;
+  transition: transform .150s, background .01s;
+  @extend .noflick;
+
+  &:hover {
+    background-color: #00EE00;
+    box-shadow: 
+      0 0 0 0 rgba(0,0,0,.3),
+      inset 0 -1px 2px -1px rgba(0,0,0,.5), 
+      inset 0 1px 2px 1px rgba(255,255,255,.3);
+  }
+
+  &:active {
+    background: linear-gradient(bottom, rgba(0,0,0,.15), rgba(0,0,0,.3));
+    background-color: #00CC00;
+    text-shadow: 0 1px 0 rgba(0,0,0,.3), 0 -1px 0 rgba(255,255,255,.3);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.3), inset 0 -1px 2px rgba(255,255,255,.3);
+    outline: none;
+  }
+
+  &.remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #E01C12;
+    text-align: center;
+    line-height: 16px;
+    padding: 10px;
+    border-color: #B30000;
+    font-style: 1.6em;
+    font-weight: bolder;
+    font-family: Helvetica, Arial, sans-serif;
+
+    &:hover {
+      background-color: #EF0005;
+    }
+  }
+}
+
+#add_new {
+  position: relative;
+  top: 20px;
+  right: 20px;
+}
+
+.author {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}*/
+</style>
+
+
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index3.html"><span class="glyphicon glyphicon-list-alt"> NOTES</span></a>
+  <a href="reminder.html"><span class="glyphicon glyphicon-time"> REMINDERS</span></a>
+  <a href="list.html"><span class="glyphicon glyphicon-list"> LIST</span></a>
+  <a href="#"><span class="glyphicon glyphicon-heart"> FAVOURITES</span></a>
+  <a href="#"><span class="glyphicon glyphicon-trash"> TRASH</span></a>
+</div>
+
+  <nav class="navbar">
+    <div id="main">
+      <span class="title" onclick="openNav()">&#9776; &nbsp REMIND ME</span>
+      
+  </nav>
+    </div>
+
+
+
+  <script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+
+
+
+
+</script>
+     
+</body>
+</html> 
+

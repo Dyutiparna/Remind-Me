@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/notes.css">
+    <script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Notes</title>
+    <style>
+    	body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fa833a ;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body class="content">
+	<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index3.html"><span class="glyphicon glyphicon-list-alt"> NOTES</span></a>
+  <a href="reminder.html"><span class="glyphicon glyphicon-time"> REMINDERS</span></a>
+  <a href="list.html"><span class="glyphicon glyphicon-list"> LIST</span></a>
+  <a href="#"><span class="glyphicon glyphicon-heart"> FAVOURITES</span></a>
+  <a href="#"><span class="glyphicon glyphicon-trash"> TRASH</span></a>
+</div>
+
+  <nav class="navbar">
+    <div id="main">
+      <span class="notes" onclick="openNav()">&#9776;&nbsp NOTES</span>    
+       &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <button id="button1" class="btn btn-primary navbar-btn navbar-right" type="button" onclick="window.location.href='secndpg.html'"><span class="glyphicon glyphicon-home"></span></button>
+			
+  </nav>
+    </div>
+	
+		<div class="container">
+			
+		</div>
+	
+	<div>
+    <textarea class="text_edit" id="my_text"></textarea>
+    <br />
+	</div>
+    <div id="view_text">
+    </div>
+    
+    	<div class="container">
+    		<ul class="list">
+    		<button class="btn btn-primary navbar-btn" type="button" onclick="window.location.href='layout1.html'"><span class="glyphicon glyphicon-picture"></span></button>&nbsp &nbsp &nbsp
+    		
+    		<button class="btn btn-primary navbar-btn" type="button" onclick="document.getElementById('my_text').value = ''"><span class="glyphicon glyphicon-share-alt"></span></button>&nbsp &nbsp &nbsp
+    		
+    		<button class="btn btn-primary navbar-btn" type="button"><span class="glyphicon glyphicon-trash"></span></button>&nbsp &nbsp
+    		
+    		<button class="btn btn-primary navbar-btn" type="button" id="createFile" onclick="createFile()"><span class="glyphicon glyphicon-save"></span></button>	
+    		</ul>
+    	</div>
+    
+    <script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+
+
+
+</script>
+</body>
+
+</html>

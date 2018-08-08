@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reminder.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+    
+    <style>
+       body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+.title
+{
+  font-size:30px; 
+  cursor:pointer;
+  font-family: Alike;
+}
+.navbar
+{
+  background-color: #f97220 ;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fa833a ;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.glyphicon
+{
+  top: 1px;
+  position: relative;
+  display: inline-block;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+  font-family: "Glyphicons Halflings";
+}
+    </style>
+    <title>Reminder</title>
+   
+</head>
+<body class="content">
+    <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index3.html"><span class="glyphicon glyphicon-list-alt"> NOTES</span></a>
+            <a href="reminder.html"><span class="glyphicon glyphicon-time"> REMINDERS</span></a>
+            <a href="list.html"><span class="glyphicon glyphicon-list"> LIST</span></a>
+            <a href="#"><span class="glyphicon glyphicon-heart"> FAVOURITES</span></a>
+            <a href="#"><span class="glyphicon glyphicon-trash"> TRASH</span></a>
+    </div>
+        <nav class="navbar">
+            <div id="main">
+                <span class="notes_edit" onclick="openNav()">&#9776;&nbsp REMINDERS</span>
+                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+                <button class="btn btn-primary navbar-btn navbar-right" type="button" onclick="window.location.href='secndpg.html'"><span class="glyphicon glyphicon-home"></span>
+                </button>
+        </nav>
+
+             <!-- <div data-role="main" class="ui-content">
+    <table data-role="table" data-mode="column" id="allTable" class="ui-responsive table-stroke">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>-->
+                <button class="btn btn-success" id="button1" data-toggle="modal" data-target="#myModal">ADD
+                </button>
+         <div class="container">
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select a date</h4>
+        </div>
+        <div class="modal-body">
+          <input type="date" id="myDate">
+        </div>
+        <div class="modal-header">
+        <h4 class="modal-title">Select a time</h4>
+      </div>
+        <div class="modal-body">
+          <input type="time" id="myTime">
+        </div>
+        <div class="modal-header">
+        <h4 class="modal-title" id="noteInput">Take a note</h4>
+      </div>
+        <div class="modal-body">
+        <div class="md-form">
+          <textarea type="text" id="form7" class="md-textarea form-control" rows="3"></textarea>
+        </div>
+      </div>
+      
+        <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal" onclick="saveFile()">Save</button>
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </div>
+  </div>
+  
+
+   <script type="text/javascript" src="cordova.js"></script>
+    <script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+/*$(document).on("pagebeforeshow","#all",function(){
+
+    var html = '';
+
+    for(var count = 0; count < info.data.length; count++)
+    {
+        html = html + "<tr><td>" + info.data[count][1] + "</td><td>" + info.data[count][3] + "</td></tr>";
+
+    }
+
+    $("table#allTable tbody").empty();
+    $("table#allTable tbody").append(html).closest("table#allTable").table("refresh").trigger("create");  
+});*/
+/*var modal=document.getElementById("myModal");
+var btn=document.getElementById("button1");
+var button=document.getElementByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+button.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+$(document).ready(function(){
+    ("#datepicker").datepicker();
+});
+$(function() {
+    $('#datetimepicker1').datetimepicker({
+      language: 'pt-BR'
+    });
+  });*/
+</script>
+ <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

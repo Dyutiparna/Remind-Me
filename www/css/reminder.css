@@ -1,0 +1,129 @@
+
+/**{
+    font-family: 'Rambla', sans-serif;
+}*/
+.content
+{
+  height: cover;
+  width: cover;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*.container{
+    margin: 0 auto;
+    max-width: 1500px;
+    width: 100%;
+}*/
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+.header a{
+    float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header a.notes{
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+}
+#button1{
+    display: inline-block;
+    background-color: green;
+    color: white;
+    border: none;
+    padding:20px;
+    margin: 4px 2px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    float:right;
+    position: absolute;
+    bottom: 8px;
+    border-radius: 60%;
+    left:255px;
+}
+@media only screen and (max-width:500px){
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    .header a{
+            float: none;
+            display: block;
+            text-align: left;
+    }
+}
+.navbar
+{
+  background-color: #f97220;
+  font-family: Alike;
+}
+.notes_edit
+{
+  font-size:30px;
+  cursor:pointer;
+}
+#button2
+{
+  float: right;
+}
+/*.active-pink-textarea.md-form label.active {
+    color: #f48fb1;
+}
+.pink-textarea textarea.md-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #f48fb1;
+    box-shadow: 0 1px 0 0 #f48fb1;
+}
+.pink-textarea.md-form .prefix.active {
+    color: #f48fb1;
+}
+
+.active-amber-textarea.md-form label.active {
+    color: #ffa000;
+}
+.amber-textarea textarea.md-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #ffa000;
+    box-shadow: 0 1px 0 0 #ffa000;
+}
+.amber-textarea.md-form .prefix.active {
+    color: #ffa000;
+}
+
+.active-pink-textarea-2 textarea.md-textarea {
+    border-bottom: 1px solid #f48fb1;
+    box-shadow: 0 1px 0 0 #f48fb1;
+}
+.active-pink-textarea-2.md-form label.active {
+    color: #f48fb1;
+}
+.active-pink-textarea-2.md-form label {
+    color: #f48fb1;
+}
+.active-pink-textarea-2.md-form .prefix {
+    color: #f48fb1;
+}
+
+.active-amber-textarea-2 textarea.md-textarea {
+    border-bottom: 1px solid #ffa000;
+    box-shadow: 0 1px 0 0 #ffa000;
+}
+.active-amber-textarea-2.md-form label.active {
+    color: #ffa000;
+}
+.active-amber-textarea-2.md-form label {
+    color: #ffa000;
+}
+.active-amber-textarea-2.md-form .prefix {
+    color: #ffa000;
+}*/

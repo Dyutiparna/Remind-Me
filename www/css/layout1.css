@@ -1,0 +1,44 @@
+.text_edit {
+    width: 100%;
+    height: 73.67vh;
+    margin-top: -20px;
+    resize: none;
+    border: transparent;
+    background-color: #82e0aa;
+    background-repeat: no-repeat;
+     font-size: 20px;
+
+}
+#view_text {
+    width: auto;
+
+}
+
+.glyphicon
+{
+  top: 1px;
+  position: relative;
+  display: inline-block;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+  font-family: "Glyphicons Halflings";
+}
+.content
+{
+  height: cover;
+  width: cover;
+}
+.navbar
+{
+  background-color: #f97220  ;
+   font-family: Alike;
+}
+.list
+{
+  margin-top: 15px;
+  margin-right: 10px;
+}
+#button1
+{
+  float: right;
+}
